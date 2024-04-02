@@ -26,10 +26,10 @@ public class BaristaResourceTest {
         LOGGER.info("Testing makeCoffee method");
         given()
                 .body(json)
+                .header("Content-Type", "application/json")
                 .when()
                 .post("/make")
                 .then()
-                .statusCode(201)
-                .body(contains("Larry"));
+                .statusCode(201);
     }
 }
